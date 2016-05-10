@@ -5,11 +5,5 @@ rollinghash.o: ./src/rollinghash.c
 	gcc -Wall -c ./src/rollinghash.c
 utils.o: ./src/tools/utils.c
 	gcc -Wall -c ./src/tools/utils.c
-
-# Testing file 
-test: ./examples/testfile.o
-	gcc -Wall -o test ./examples/testfile.o
-testfile.o: ./examples/testfile.c
-	gcc -c ./examples/testfile.c
 clean:
-	rm -f ./examples/*.o *.o test
+	rm -f *.o test rh.a

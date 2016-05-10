@@ -1,8 +1,5 @@
 
 #include <stdio.h>
-//#include "../src/rollinghash.h"
-#include "../src/tools/utils.h"
-
 
 int main(void) {
   int a = 9;
