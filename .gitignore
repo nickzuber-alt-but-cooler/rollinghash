@@ -1,0 +1,7 @@
+
+# Build related files
+
+*.o
+*.exe
+./examples/*.o
+./build/*.a
