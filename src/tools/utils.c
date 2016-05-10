@@ -12,7 +12,8 @@
 long getModularInverse(long input, unsigned long primeBase) {
   long gcd = getGreatestCommonDenominator(input, primeBase);
   if(gcd != 1) {
-    return -1;
+    fprintf(stderr, "ERROR: modular base is not prime therefore the caluclated inverse is not guarenteed.\nOffending input: %ld", primeBase);
+    exit(1);
   } else {
     return modularExponential(input, primeBase-2, primeBase);
   }
