@@ -9,15 +9,15 @@
  * @param prime  the prime modular base
  * @return       the modular inverse of the input integer
  */
-size_t getModularInverse(size_t input, size_t prime) {
-  size_t gcd = getGreatestCommonDenominator(input, prime);
+long getModularInverse(long input, unsigned long primeBase) {
+  long gcd = getGreatestCommonDenominator(input, primeBase);
   if(gcd != 1) {
     return -1;
   } else {
-    //return raiseToPowerWithinBounds(input, prime-2, prime);
-    return gcd;
+    return modularExponential(input, primeBase-2, primeBase);
   }
 }
+
 
 /**
  * Finds the greatest common denominator of the two input integers.
@@ -26,10 +26,24 @@ size_t getModularInverse(size_t input, size_t prime) {
  * @param b  input integer to find greatest common denominator of
  * @return   the greatest common denominator of the two input integers
  */
-size_t getGreatestCommonDenominator(size_t a, size_t b) {
-  if(a == 0) {
-    return b;
-  } else{
-    return getGreatestCommonDenominator(b % a, a);
+long getGreatestCommonDenominator(long a, long b) {
+  return (a == 0) ? b : getGreatestCommonDenominator(b%a, a);
+}
+
+/**
+ * Computes the power of two numbers under a modular base.
+ * 
+ * @param base        the base number to be raised 
+ * @param degree      the degree to raise the base 
+ * @param upperBound  the modulo upper bound for computations
+ * @return            the base to the degree of the input modulo the modulo bound
+ */
+long modularExponential(long base, unsigned int degree, unsigned long moduloBound) {
+  if(degree == 0) {
+    return 1;
+  } else {
+    long power = modularExponential(base, degree/2, moduloBound) % moduloBound;
+    power = (power * power) % moduloBound;
+    return (degree%2 == 0) ? power : (base * power) % moduloBound;
   }
 }

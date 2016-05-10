@@ -7,7 +7,8 @@
 #include <stddef.h>
 #include <math.h>
 
-size_t getModularInverse(size_t input, size_t prime);
-size_t getGreatestCommonDenominator(size_t a, size_t b);
+long getModularInverse(long input, unsigned long primeBase);
+long getGreatestCommonDenominator(long a, long b);
+long modularExponential(long base, unsigned int degree, unsigned long moduloBound);
 
 #endif
