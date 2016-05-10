@@ -1,7 +1,11 @@
 
-# Build related files
-
+# Root directory
 *.o
 *.exe
+
+# Examples
 ./examples/*.o
-./build/*.a
+./examples/*.stackdump
+
+# Build
+./build/rh.a
