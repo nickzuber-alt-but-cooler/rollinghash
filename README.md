@@ -23,3 +23,9 @@ When you initially build the repository, the static library will be located in [
 ```
 $ gcc -Wall -o myApplication ./file1.o ./file2.o ./path/to/lib/rh.a
 ```
+
+### License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2016 Nick Zuber

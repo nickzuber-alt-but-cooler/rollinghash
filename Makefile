@@ -6,4 +6,4 @@ rollinghash.o: ./src/rollinghash.c
 utils.o: ./src/tools/utils.c
 	gcc -Wall -c ./src/tools/utils.c
 clean:
-	rm -f *.o test ./build/rh.a
+	rm -f *.o ./build/rh.a
