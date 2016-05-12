@@ -12,7 +12,7 @@ RollingHash* createRollingHash(unsigned size_t base) {
   if(rh == NULL) {
     fprintf(stderr, "ERROR: insufficient amount of memeory to create new instance of rolling hash.");
   }
-  
+
   // The internal hash of the window
   rh->current_state = 0;
 
@@ -29,4 +29,17 @@ RollingHash* createRollingHash(unsigned size_t base) {
   rh->OFFSET_IF_NEGATIVE = PRIME_BASE * base;
 
   return rh;
+}
+
+
+/**
+ * Computes a hash on the input assuming it is of the same base of
+ * the instance of the rolling hash.
+ * 
+ * @param rh    the rolling hash in which to base the hash off of
+ * @param data  the data to hash
+ * @return      the hash value of the data argument
+ */
+unsigned size_t hash(RollingHash* rh, char* data) {
+  
 }
