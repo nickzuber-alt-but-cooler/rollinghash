@@ -17,10 +17,9 @@ unsigned long PRIME_BASE = 396871;
  * never exceed the value of an unsigned integer.
  */
 typedef struct {
-  unsigned size_t base;
   unsigned size_t current_state;
-  unsigned size_t cache;
-  unsigned size_t BUFFER_SIZE;
+  unsigned size_t BASE;
+  unsigned size_t CACHE;
   unsigned size_t INVERSE_BASE;
   unsigned size_t OFFSET_IF_NEGATIVE;
 } RollingHash;
