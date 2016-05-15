@@ -34,7 +34,7 @@ RollingHash* createRollingHash(unsigned size_t base) {
 
 /**
  * Computes a hash on the input assuming it is of the same base of
- * the instance of the rolling hash.
+ * the instance of the rolling hash. 
  * 
  * @param rh    the rolling hash in which to base the hash off of
  * @param data  the data to hash
