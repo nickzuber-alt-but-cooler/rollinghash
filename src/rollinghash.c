@@ -41,5 +41,5 @@ RollingHash* createRollingHash(unsigned size_t base) {
  * @return      the hash value of the data argument
  */
 unsigned size_t hash(RollingHash* rh, char* data) {
-  
+  // TODO
 }
