@@ -26,7 +26,7 @@ RollingHash* createRollingHash(unsigned size_t base) {
   rh->INVERSE_BASE = getModularInverse(base, PRIME_BASE);
 
   // An offset to add when calculating a modular product to make sure it does not go negative
-  rh->OFFSET_IF_NEGATIVE = PRIME_BASE * base;
+  rh->OFFSET_IF_NEGATIVE = base * PRIME_BASE;
 
   return rh;
 }
